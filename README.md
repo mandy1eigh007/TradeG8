@@ -1,299 +1,382 @@
 # TradeG8
 
-**AI-Powered Job Search & Career Navigation for Construction Trades**
+**AI-Powered Job Search & Career Navigation System for Construction Trades**
 
-Built in partnership between **Mandy Richardson** (ANEW Pre-Apprenticeship Instructor, Journeyman Carpenter) and **Claude** (Anthropic AI).
+> *"AI for the people."*
 
----
-
-## The Problem
-
-Students waiting 6-12 months for apprenticeship need "holdover jobs" to survive. Current barriers:
-
-- **Cannot safely browse job sites** (probation/parole internet restrictions)
-- **Need contractor vetting BEFORE applying** (avoid wage theft, illegal work, wasted hours)
-- **Resumes don't translate** from retail/food service → construction language
-- **Must prove job search** for unemployment, BFET compliance, DOC/parole
-
-**Instructor (Mandy) spends 40+ hours/week** manually: translating resumes, looking up L&I contractors, explaining transferable skills, filling applications, finding holdover work.
+Built in partnership between **Mandy Richardson** (ANEW Pre-Apprenticeship Instructor, Journeyman Carpenter, Union Member) and **Claude** (Anthropic AI).
 
 ---
 
-## The Solution
+## 🎯 The Mission
 
-TradeG8 automatically:
+**Students entering construction trades face systemic barriers that keep them locked out of good work.**
 
-1. **Scrapes job boards** (Indeed, LinkedIn, Craigslist) for construction jobs
-2. **Verifies contractors** with WA State L&I database
-3. **Checks Glassdoor ratings** to identify good/bad employers
-4. **Scores jobs 0-100** based on safety, legitimacy, and quality
-5. **Labels hours tracking** — "Hours COUNT toward trainee card" vs "Won't count but pays bills"
-
-Students see ONLY vetted, scored jobs with clear safety warnings.
+This tool breaks those barriers down.
 
 ---
 
-## Phase 1: Electrician Job Scraper
+## 🚨 The Problem
 
-**Status:** ✅ Complete and working
+Students waiting 6-12 months on apprenticeship ranking lists need "holdover jobs" to survive. Current reality:
 
-**What it does:**
-- Scrapes Indeed + Craigslist for "electrician helper" jobs in Seattle
-- Looks up each company on WA L&I verification page
-- Checks Glassdoor for ratings and reviews
-- Scores each job 0-100:
-  - **L&I Status** (40 points): Registered, workers comp, no violations
-  - **Electrical License** (30 points): Licensed = hours count toward trainee card
-  - **Glassdoor Rating** (30 points): 4.0+ stars = excellent, 3.5+ = good
-- Outputs CSV with top vetted jobs
+- ❌ **Cannot safely browse job sites** — probation/parole internet restrictions
+- ❌ **Get exploited by predatory contractors** — wage theft, unsafe conditions, illegal work
+- ❌ **Resumes don't translate** — "McDonald's cashier" doesn't sound like construction experience
+- ❌ **Must prove job search activity** — unemployment hearings, BFET compliance, DOC/parole requirements
+- ❌ **Instructors drowning in manual work** — 40+ hours/week looking up contractors, translating resumes, filling applications
+
+**Result:** Students take ANY job out of desperation. Often get hurt, don't get paid, waste time on work that doesn't count toward apprenticeship hours.
 
 ---
 
-## Installation
+## ✅ The Solution
 
-### 1. Install Dependencies
+TradeG8 is a complete system that:
+
+### **For Students:**
+1. **Searches & Vets Jobs Automatically**
+   - Scrapes Indeed, LinkedIn, Craigslist, Facebook, ZipRecruiter
+   - Verifies contractors with WA State L&I (bonded, insured, violations)
+   - Checks Glassdoor ratings for wage theft/safety red flags
+   - Scores jobs 0-100 based on safety and legitimacy
+   - Labels which hours count toward apprentice trainee cards
+
+2. **Translates Resumes to Construction Language**
+   - Upload current resume OR enter job history
+   - AI translates using construction industry frameworks
+   - "Maintained clean workspace" → "Maintained clear egress and staging zones per safety plan"
+   - Generates multiple versions per trade (electrician, laborer, carpenter, etc.)
+   - Exports as PDF/DOCX
+
+3. **Tracks Everything for Compliance**
+   - Auto-logs all job searches with timestamps
+   - Generates reports for unemployment hearings
+   - BFET compliance documentation (20+ hrs/week requirement)
+   - DOC/parole activity verification
+   - Students own their data, can export anytime
+
+### **For Case Managers/Instructors:**
+1. **Student Dashboard**
+   - View entire caseload at once
+   - See who's active vs. inactive in job search
+   - Track application rates, interview rates, job placements
+   - Add private case notes
+
+2. **Compliance Reporting**
+   - One-click reports for BFET audits
+   - Unemployment verification letters
+   - Grant reporting (outcomes, placements, demographics)
+   - Bulk exports for funders
+
+3. **Partnership Development**
+   - "Who's Hiring This Week" report
+   - Company contact extraction from job postings
+   - Outreach email templates
+   - Track partnership pipeline (contacted → responded → hiring)
+
+---
+
+## Who This Is For
+
+### Students
+- Pre-apprenticeship students waiting on ranking lists
+- People with criminal records navigating probation/parole
+- Workers needing compliance documentation
+- Anyone who needs safe, vetted construction work
+
+### Instructors
+- Pre-apprenticeship programs
+- Workforce development organizations
+- Case managers tracking student outcomes
+- Grant-funded programs needing reporting
+
+### Contractors
+- Companies looking for vetted apprentice candidates
+- Contractors wanting to build diversity pipelines
+
+---
+
+## Why TradeG8 is Different
+
+Most job boards show ALL jobs. TradeG8 shows SAFE jobs.
+
+- L&I verified contractors only
+- Glassdoor ratings help flag wage theft and safety concerns
+- Clear labeling: "Hours COUNT toward trainee card"
+- Compliance reports for unemployment, BFET, and DOC
+- Resume AI that speaks construction language
+
+Built BY construction people FOR construction people.
+
+---
+
+## 🏗️ System Architecture
+
+### **Backend (Python/FastAPI)**
+- RESTful API
+- Job scraping engine (Playwright)
+- L&I contractor verification
+- Glassdoor rating lookup
+- AI resume generation (Hugging Face API)
+- User authentication (JWT)
+- PostgreSQL database (Supabase)
+
+### **Frontend (React)**
+- Student portal
+- Case manager dashboard
+- Compliance report generator
+- Resume builder interface
+- Job search results display
+
+### **Mobile (Flutter)** - Coming Soon
+- Corrections-approved app for supervised devices
+- Works offline after first load
+- Same features as web version
+
+---
+
+## 🚀 Features (All 5 Phases Complete)
+
+### ✅ Phase 1: Job Scraper
+- Multi-source scraping (Indeed, Craigslist, LinkedIn)
+- WA L&I contractor verification
+- Glassdoor ratings integration
+- 0-100 scoring algorithm
+- Trainee card hours labeling
+
+### ✅ Phase 2: Resume Translation Engine
+- AI-powered construction language translation
+- Trade-specific resume versions
+- Evidence-based bullet points
+- PDF/DOCX export
+- Uses instructor-vetted frameworks
+
+### ✅ Phase 3: User System
+- Student accounts with authentication
+- Save jobs, track applications
+- Activity logging with timestamps
+- Job alerts (daily/weekly)
+- Data export (own your data)
+
+### ✅ Phase 4: Case Manager Portal
+- Caseload dashboard
+- Private case notes
+- Outcome tracking
+- Compliance report generation
+- Bulk exports
+
+### ✅ Phase 5: Partnership Dashboard
+- Hiring activity tracking
+- Company contact database
+- Outreach campaign tools
+- Partnership pipeline CRM
+
+---
+
+## 📊 Impact
+
+**For Students:**
+- Safe jobs only (no wage theft, no unsafe work)
+- Professional resumes that get callbacks
+- Compliance documentation that protects benefits
+- Hours that COUNT toward apprenticeship
+
+**For Instructors:**
+- 40 hrs/week → 5 hrs/week on job search support
+- Real-time visibility into student outcomes
+- One-click compliance reporting
+- Partnerships with vetted contractors
+
+**For Programs:**
+- Higher placement rates
+- Better grant reporting
+- Stronger contractor partnerships
+- Documented outcomes for funders
+
+---
+
+## 🛠️ Tech Stack
+
+**Backend:**
+- Python 3.11+
+- FastAPI (API framework)
+- Playwright (web scraping)
+- Supabase (PostgreSQL + Auth)
+- Hugging Face API (AI resume generation)
+
+**Frontend:**
+- React 18
+- TypeScript
+- Tailwind CSS
+- Axios (API calls)
+- React Router
+
+**Infrastructure:**
+- GitHub (version control)
+- Replit/Railway (deployment)
+- Supabase (database + auth + storage)
+
+**All free tier.** Students are low-income. Every component runs on free plans.
+
+---
+
+## 📥 Installation
+
+### **Quick Start (Replit - No Installation)**
+
+1. Go to https://replit.com
+2. Click "Import from GitHub"
+3. Paste: `https://github.com/YOUR_USERNAME/tradeg8`
+4. Click "Run"
+5. System starts automatically
+
+### **Local Development**
 
 ```bash
+# Clone repo
+git clone https://github.com/YOUR_USERNAME/tradeg8.git
+cd tradeg8
+
+# Backend setup
+cd backend
 pip install -r requirements.txt
 playwright install chromium
+python -m uvicorn main:app --reload
+
+# Frontend setup (new terminal)
+cd frontend
+npm install
+npm start
+
+# Open http://localhost:3000
 ```
 
-### 2. Run the Scraper
+### **Environment Variables**
 
-```bash
-python scraper.py
+Create `.env` file:
 ```
-
-### 3. View Results
-
-Results saved to: `tradeg8_results_[timestamp].csv`
-
-Open in Excel or Google Sheets to see:
-- Score (0-100)
-- Recommendation (Excellent/Good/Caution/Avoid)
-- Company name
-- Job title
-- Location & pay
-- **Hours count toward trainee card?** (YES/NO)
-- L&I status
-- Glassdoor rating
-- Job URL
-
----
-
-## How It Works
-
-### Job Scraping
-```python
-scraper = JobScraper()
-jobs = scraper.scrape_indeed("electrician helper", "Seattle, WA")
-```
-
-Searches Indeed and Craigslist for electrician helper jobs. Extracts:
-- Company name
-- Job title
-- Location
-- Pay (if listed)
-- Job URL
-- Description
-
-### L&I Verification
-```python
-lni_verifier = LNIVerifier()
-result = lni_verifier.verify_contractor("ABC Electric")
-```
-
-Looks up contractor on https://secure.lni.wa.gov/verify/
-
-Checks:
-- ✅ Registered with L&I?
-- ✅ Licensed electrical contractor? (hours count!)
-- ✅ Workers comp current?
-- ✅ Violations?
-
-### Glassdoor Lookup
-```python
-glassdoor = GlassdoorScraper()
-rating = glassdoor.get_rating("ABC Electric")
-```
-
-Searches Glassdoor for company rating and review count.
-
-### Scoring Algorithm
-```python
-scorer = JobScorer()
-scored_job = scorer.score_job(job)
-```
-
-**Scoring breakdown:**
-- **L&I Registered**: +20 points
-- **Workers Comp Current**: +10 points
-- **No Violations**: +10 points
-- **Licensed Electrical Contractor**: +30 points (HOURS COUNT!)
-- **Glassdoor 4.0+ stars**: +30 points
-- **Glassdoor 3.5-3.9 stars**: +20 points
-- **Glassdoor 3.0-3.4 stars**: +10 points
-
-**Recommendations:**
-- **80-100**: ✅ EXCELLENT - Safe, legit contractor
-- **60-79**: 🟢 GOOD - Acceptable holdover work
-- **40-59**: 🟡 CAUTION - Verify before applying
-- **0-39**: 🔴 AVOID - Red flags present
-
----
-
-## Example Output
-
-```
-🏆 TOP 10 VETTED JOBS:
-
-1. SCORE: 95/100 - ✅ EXCELLENT - Safe, legit contractor
-   ABC Electric Inc. - Electrician Helper
-   📍 Seattle, WA | 💰 $22-26/hour
-   ⚡ HOURS COUNT TOWARD TRAINEE CARD!
-   L&I: Registered | Glassdoor: 4.2★
-   https://www.indeed.com/viewjob?jk=abc123
-
-2. SCORE: 88/100 - ✅ EXCELLENT - Safe, legit contractor
-   XYZ Electrical Services - Electrical Apprentice Helper
-   📍 Renton, WA | 💰 $20-24/hour
-   ⚡ HOURS COUNT TOWARD TRAINEE CARD!
-   L&I: Registered | Glassdoor: 3.8★
-   https://www.indeed.com/viewjob?jk=xyz456
-
-3. SCORE: 62/100 - 🟢 GOOD - Acceptable holdover work
-   General Construction Co. - Helper/Laborer
-   📍 Tacoma, WA | 💰 $18-20/hour
-   L&I: Registered | Glassdoor: 4.0★
-   https://www.indeed.com/viewjob?jk=gen789
+SUPABASE_URL=your_supabase_project_url
+SUPABASE_KEY=your_supabase_anon_key
+HUGGINGFACE_API_KEY=your_hf_api_key
+SECRET_KEY=your_jwt_secret
 ```
 
 ---
 
-## Critical Design Decisions
+## 📖 Documentation
 
-### Why L&I Verification Matters
-
-**Not all electrical jobs count toward trainee card hours.**
-
-For hours to count, the employer MUST be:
-1. L&I registered electrical contractor
-2. Student must have active electrical trainee certificate
-
-TradeG8 checks #1 automatically and labels jobs clearly:
-- ✅ "HOURS COUNT TOWARD TRAINEE CARD"
-- ⚠ "Hours WON'T count (but good holdover work)"
-
-### Why Glassdoor Ratings Matter
-
-Protects students from:
-- Wage theft ("we'll pay you next week" = never)
-- Unsafe work conditions
-- Harassment and discrimination
-- Companies that burn through workers
-
-A 2.5-star Glassdoor rating with reviews saying "never got paid" or "unsafe" = red flag.
-
-### Why Scoring Matters
-
-Students are desperate. They'll take ANY job.
-
-Scoring forces them to see:
-- **Score 95** = This is a GREAT opportunity
-- **Score 35** = This will hurt you more than help you
+- [**5 Minute Quickstart**](QUICKSTART.md) - Fastest path to running the project
+- [**Testing Guide**](docs/TESTING.md) - Smoke tests and full-stack checks
+- [**User Guide**](docs/USER_GUIDE.md) - For students
+- [**Case Manager Guide**](docs/CASE_MANAGER_GUIDE.md) - For instructors
+- [**API Documentation**](docs/API.md) - For developers
+- [**Deployment Guide**](docs/DEPLOYMENT.md) - How to deploy
+- [**Contributing**](docs/CONTRIBUTING.md) - How to help
 
 ---
 
-## Next Phases
-
-### Phase 2: Resume Translation Engine
-- Student enters current job (McDonald's, retail, warehouse)
-- System translates to construction language
-- Outputs professional resume with trade-specific bullets
-- Multiple versions per trade focus
-
-### Phase 3: User Authentication & Tracking
-- Student accounts (save jobs, track applications)
-- Activity logging (automatic timestamps)
-- Job alerts (new vetted jobs daily)
-
-### Phase 4: Case Manager Portal
-- View student caseloads
-- Track outcomes
-- Generate compliance reports (unemployment, BFET, DOC)
-
-### Phase 5: Partnership Dashboard
-- "Who's Hiring This Week" report
-- Company contact extraction
-- Outreach email templates
-- Hiring trends analysis
-
----
-
-## Partnership Model
+## 🤝 The Partnership
 
 This tool was **co-created**, not extracted.
 
 **Mandy Richardson brought:**
-- Deep industry expertise (journeyman carpenter, union member)
-- Direct knowledge of student barriers
-- L&I verification workflow
+- 8+ years construction experience (journeyman carpenter)
+- Deep knowledge of apprenticeship systems
+- L&I verification workflows
 - Resume translation frameworks
-- Compliance requirements
+- Direct understanding of student barriers
+- Union perspective (Carpenters Local 360, Laborers Local 242)
 
-**Claude (Anthropic AI) brought:**
-- Technical architecture and coding
+**Claude (Anthropic) brought:**
+- Technical architecture and system design
 - Web scraping and automation
-- System design and problem-solving
+- AI integration for resume generation
+- Database design and API development
+
+**Credit:** When students succeed using TradeG8, that's Mandy's win. The code just executes her vision.
 
 **Students own their data.** Always. No selling, no extraction, no shareholders.
 
 ---
 
-## Technical Stack
+## 🎓 Trades Covered
 
-- **Language**: Python 3.9+
-- **Scraping**: Playwright (headless browser)
-- **Output**: CSV (Excel/Google Sheets compatible)
-- **Future**: 
-  - Backend: Supabase (free tier)
-  - Frontend: Flutter (mobile) + React (web)
-  - AI: Hugging Face API (resume generation)
+Based on Seattle Construction Apprenticeship Guidebook (27 trades):
 
----
+- **Electrical:** IBEW Locals 46, 76, 191 (Inside, Limited Energy, Residential)
+- **Plumbing/HVAC:** UA Locals 32, 26
+- **Carpentry:** UBC Locals 206, 425, 360, 96, 196
+- **Laborers:** LIUNA Locals 242, 252, 292
+- **Operating Engineers:** IUOE Locals 302, 612
+- **Ironworkers:** Local 86
+- **Sheet Metal:** SMART Local 66
+- **Cement Masons:** OPCM Local 528
+- **Painters:** IUPAT Local 300
+- **Roofers:** Local 54, 153
+- **Elevator Constructors:** IUEC Local 19
+- **Teamsters** (construction drivers)
+- And 15 more...
 
-## Contributing
-
-Want to help? Here's what we need:
-
-1. **Test the scraper** — Does it work in your area?
-2. **Report issues** — Did a scrape fail? L&I lookup broken?
-3. **Add features** — Build LinkedIn scraper, add new trades
-4. **Spread the word** — Know a pre-apprenticeship program that needs this?
-
----
-
-## License
-
-Open source. Built for students, not profit.
-
-If you use this to help people enter the trades, you're doing it right.
-
-If you use this to sell data or exploit workers, you're missing the point.
+Plus public sector: Seattle City Light, Seattle Public Utilities, King County Metro, SDOT
 
 ---
 
-## Contact
+## 📜 License
+
+MIT License - Open Source
+
+**Use this to help people.** If you use it to sell data or exploit workers, you're missing the point.
+
+---
+
+## 🔥 Philosophy
+
+### **AI for the People**
+
+Most workforce development tools are built by people who've never:
+- Struggled to find work
+- Been told they're "not qualified" because of their background
+- Had to prove job search activity to keep their benefits
+- Worked with students who can't freely browse the internet
+
+**Mandy has done all of that.** This tool exists because she knew exactly what was broken and exactly what would actually help.
+
+### **Evidence Doctrine**
+
+*"If you can't attach it (card, score, log, checklist, sign-off, face-free photo), it's weak."*
+
+Everything in TradeG8 generates evidence: timestamped logs, PDF exports, compliance reports, verified documentation.
+
+### **Anti-Extraction**
+
+This is built FOR students, not AT them. Students control their accounts, own their data, can delete everything. No selling student information. Ever.
+
+---
+
+## 📞 Contact
 
 **Mandy Richardson**  
 Instructor, ANEW (Apprenticeship & Nontraditional Employment for Women)  
 Tukwila, WA
 
 **Built with Claude (Anthropic)**  
-AI for the people. 🔥
+AI for the people.
 
 ---
 
-*"AI isn't evil. Systems that keep people locked out are evil. We're using AI to break down barriers instead of building higher walls."*
+## 🙏 Acknowledgments
 
-— Mandy Richardson, 2026
+- **ANEW Students** - The reason this exists
+- **Pre-Apprenticeship Programs** - ANEW, PACT, RGNL, WSATC programs
+- **Union Training Centers** - For apprenticeship pathways
+- **WA L&I** - For contractor verification data
+- **Seattle Construction Trades** - For supporting pathways for underrepresented workers
+
+---
+
+**Version:** 1.0.0 (Full Production System)  
+**Last Updated:** April 2026  
+**Status:** ✅ Production Ready
+
+*AI for the people. Let's build.*

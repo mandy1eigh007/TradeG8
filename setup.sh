@@ -1,33 +1,45 @@
 #!/bin/bash
 
-echo "========================================="
-echo "TradeG8 Setup"
+echo "=================================="
+echo "TradeG8 Complete Setup"
 echo "Built by Mandy Richardson & Claude"
-echo "========================================="
+echo "=================================="
 echo ""
 
-# Check Python version
-python_version=$(python3 --version 2>&1 | awk '{print $2}')
-echo "✓ Python version: $python_version"
+# Backend setup
+echo "📦 Setting up backend..."
+if [ -f backend/requirements.txt ]; then
+    cd backend
+    pip install -r requirements.txt
+    playwright install chromium
+    cd ..
+elif [ -f requirements.txt ]; then
+    echo "backend/requirements.txt not found; using root requirements.txt"
+    pip install -r requirements.txt
+    playwright install chromium
+else
+    echo "No Python requirements file found. Skipping backend dependency install."
+fi
 
-# Install requirements
-echo ""
-echo "Installing dependencies..."
-pip3 install -r requirements.txt
+# Frontend setup
+echo "📦 Setting up frontend..."
+if [ -d frontend ]; then
+    cd frontend
+    npm install
+    cd ..
+elif [ -f package.json ]; then
+    echo "frontend/ not found; using root package.json"
+    npm install
+else
+    echo "No frontend package.json found. Skipping frontend dependency install."
+fi
 
-# Install Playwright browsers
 echo ""
-echo "Installing Playwright browsers..."
-playwright install chromium
-
-echo ""
-echo "========================================="
 echo "✅ Setup complete!"
-echo "========================================="
 echo ""
-echo "To run the scraper:"
-echo "  python3 scraper.py"
-echo ""
-echo "Results will be saved to:"
-echo "  tradegate_results_[timestamp].csv"
+echo "Next steps:"
+echo "1. Copy backend/.env.example to backend/.env"
+echo "2. Fill in your Supabase and API keys"
+echo "3. Run backend from backend/ when the full backend tree is present"
+echo "4. Run frontend from frontend/ when the full frontend tree is present"
 echo ""
