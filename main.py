@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TradeGate - Run on Replit
+TradeG8 - Run on Replit
 Click the green RUN button to start scraping!
 """
 
@@ -14,7 +14,7 @@ print()
 
 # Run the scraper
 print("=" * 80)
-print("TradeGate Phase 1: Electrician Job Scraper")
+print("TradeG8 Phase 1: Electrician Job Scraper")
 print("Built by Mandy Richardson & Claude (Anthropic)")
 print("=" * 80)
 print()

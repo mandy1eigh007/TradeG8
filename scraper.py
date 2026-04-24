@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TradeGate Phase 1: Electrician Job Scraper
+TradeG8 Phase 1: Electrician Job Scraper
 Built by Mandy Richardson & Claude (Anthropic)
 
 Scrapes job boards, verifies contractors with WA L&I, checks Glassdoor ratings,
@@ -419,9 +419,9 @@ class JobScorer:
 
 
 def main():
-    """Run the complete TradeGate job scraper"""
+    """Run the complete TradeG8 job scraper"""
     print("=" * 80)
-    print("TradeGate Phase 1: Electrician Job Scraper")
+    print("TradeG8 Phase 1: Electrician Job Scraper")
     print("Built by Mandy Richardson & Claude (Anthropic)")
     print("=" * 80)
     

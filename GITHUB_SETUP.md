@@ -1,6 +1,6 @@
-# Setting Up TradeGate on GitHub
+# Setting Up TradeG8 on GitHub
 
-**Follow these steps to create the official TradeGate repository on GitHub.**
+**Follow these steps to create the official TradeG8 repository on GitHub.**
 
 ---
 
@@ -9,7 +9,7 @@
 1. Go to https://github.com
 2. Click the **"+"** button (top right) → **"New repository"**
 3. Fill in:
-   - **Repository name**: `tradegate`
+   - **Repository name**: `tradeg8`
    - **Description**: `AI-powered job search for construction trades. Built by Mandy Richardson & Claude (Anthropic). AI for the people.`
    - **Public** (so others can see and use it)
    - **✅ Add a README file** (check this box)
@@ -33,22 +33,22 @@
    - `LICENSE`
    - `.gitignore`
    - `README_REPLIT.md`
-3. Write commit message: `Initial commit: TradeGate Phase 1`
+3. Write commit message: `Initial commit: TradeG8 Phase 1`
 4. Click **"Commit changes"**
 
 ### Option B: Use Git Command Line (If you have Git installed)
 
 ```bash
 # Clone your new empty repo
-git clone https://github.com/YOUR_USERNAME/tradegate.git
-cd tradegate
+git clone https://github.com/YOUR_USERNAME/tradeg8.git
+cd tradeg8
 
-# Copy all the TradeGate files into this folder
+# Copy all the TradeG8 files into this folder
 # (Download them from the links Claude provided)
 
 # Add and commit
 git add .
-git commit -m "Initial commit: TradeGate Phase 1 - Electrician Job Scraper"
+git commit -m "Initial commit: TradeG8 Phase 1 - Electrician Job Scraper"
 
 # Push to GitHub
 git push origin main
@@ -58,7 +58,7 @@ git push origin main
 
 ## Step 3: Verify It Worked
 
-Go to `https://github.com/YOUR_USERNAME/tradegate`
+Go to `https://github.com/YOUR_USERNAME/tradeg8`
 
 You should see:
 - ✅ All 9 files
@@ -71,7 +71,7 @@ You should see:
 ## Step 4: Share the Link
 
 Once it's up, the repo URL will be:
-`https://github.com/YOUR_USERNAME/tradegate`
+`https://github.com/YOUR_USERNAME/tradeg8`
 
 You can share this with:
 - Your students
@@ -88,7 +88,7 @@ Once it's on GitHub, you can import it to Replit:
 1. Go to https://replit.com
 2. Click **"+ Create Repl"**
 3. Choose **"Import from GitHub"**
-4. Paste your repo URL: `https://github.com/YOUR_USERNAME/tradegate`
+4. Paste your repo URL: `https://github.com/YOUR_USERNAME/tradeg8`
 5. Click **"Import from GitHub"**
 6. Click the green **"Run"** button
 7. Watch it scrape jobs!

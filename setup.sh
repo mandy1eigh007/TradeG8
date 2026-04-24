@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "========================================="
-echo "TradeGate Setup"
+echo "TradeG8 Setup"
 echo "Built by Mandy Richardson & Claude"
 echo "========================================="
 echo ""

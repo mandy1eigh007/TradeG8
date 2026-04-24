@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Quick test to verify TradeGate components work
+Quick test to verify TradeG8 components work
 """
 
-print("Testing TradeGate components...")
+print("Testing TradeG8 components...")
 print("=" * 60)
 
 # Test 1: Check imports
@@ -43,7 +43,7 @@ except Exception as e:
     print(f"   ✗ Scraper test failed: {e}")
 
 print("\n" + "=" * 60)
-print("✅ All tests passed! TradeGate is ready to run.")
+print("✅ All tests passed! TradeG8 is ready to run.")
 print("\nRun the full scraper with:")
 print("  python3 scraper.py")
 print("=" * 60)
