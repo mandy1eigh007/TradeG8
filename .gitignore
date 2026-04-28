@@ -31,3 +31,4 @@ build/
 
 # Output
 backend/tradeg8_results_*.csv
+tradegate_results_*.csv

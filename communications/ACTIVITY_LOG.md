@@ -84,3 +84,30 @@
 - User asked to commit everything and delete the last two uploaded zip files before zipping/exporting repo contents.
 - Deleted `backend/files.zip` and `backend/database/files2.zip` after confirming they were old Phase 1 prototype bundles and not needed for the current scaffold.
 - Created repository snapshot commit with the current TradeG8 scaffold, Supabase schema, docs, communications log, and source-materials archive.
+
+## 2026-04-28
+
+### Missing App Tree Package
+- User provided the complete missing-files package intended to fill in the absent backend API and frontend scaffold.
+- Added `backend/main.py`, backend package markers, and starter API routers for auth, jobs, and resumes.
+- Added `backend/requirements.txt` and included `email-validator` because the auth router uses Pydantic `EmailStr`.
+- Added the React frontend scaffold under `frontend/`, including `package.json`, `public/index.html`, `src/App.js`, and `src/index.js`.
+- Added `docs/API.md` with starter endpoint documentation.
+- Merged package config updates into existing `.gitignore`, `docker-compose.yml`, and root `requirements.txt` without replacing the stronger existing versions.
+- Replaced stale root `main.py` with a compatibility launcher that imports the active backend app from `backend/main.py`.
+- Updated quickstart/testing docs and README status language so they reflect the new scaffold instead of saying the backend/frontend trees are absent or fully complete.
+- Ran scaffold verification checks: Python compile check passed for root/backend API/scraper/resume framework files, JSON parse check passed for root and frontend `package.json`, and `bash -n setup.sh` passed.
+- Backend import smoke check still fails until dependencies are installed: `ModuleNotFoundError: No module named 'fastapi'`.
+- Attempted Python dependency install from root `requirements.txt`; network access was approved after the sandboxed attempt failed on DNS.
+- The first network-enabled install found a dependency conflict: `supabase==2.3.0` requires `httpx<0.25.0`, while root `requirements.txt` pinned `httpx==0.26.0`.
+- Updated root `requirements.txt` to use `httpx==0.24.1`, which matches the Supabase client dependency range.
+- Reran Python dependency install successfully after the `httpx` pin change. Pip warned that the shared JupyterLab environment prefers `httpx>=0.25.0`, but TradeG8's Supabase client requires the older compatible range.
+- Installed frontend dependencies from `frontend/package.json` with approved npm network access; npm generated `frontend/package-lock.json`.
+- npm install completed with audit warnings: 28 vulnerabilities reported in the React tooling dependency tree.
+- Backend import smoke check now passes: `import main; print(main.app.title)` returns `TradeG8 API`.
+- Direct backend scaffold checks passed for `health()` and `api.jobs.search_jobs(query="electrician")`.
+- Frontend production build passed with `npm run build`; React generated the ignored `frontend/build/` output directory.
+- Attempted the documented backend dependency path with `pip install -r backend/requirements.txt`; it failed because `torch==2.1.2` has no Python 3.12 build.
+- Updated `backend/requirements.txt` to use `torch==2.2.0`, the first Torch version available for this environment, and aligned backend `transformers` to the root `4.37.0` pin.
+- Reran `pip install -r backend/requirements.txt` successfully after the Torch pin update. This installed `torch==2.2.0+cu121`, `psycopg2-binary`, and the remaining backend-only dependencies.
+- Final verification passed: root backend import returns `TradeG8 API`, backend `health()` returns `{"status": "healthy"}`, and `import torch; print(torch.__version__)` returns `2.2.0+cu121`.

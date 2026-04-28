@@ -1,6 +1,6 @@
 # TradeG8 - 5 Minute Quickstart
 
-Current archive note: this repo has the root project files and critical setup scaffolding. The full `backend/` and `frontend/` application trees still need to be present for the full-stack commands below to run end to end.
+Current implementation note: this repo has the Phase 1 scraper, Supabase schema, starter FastAPI backend, and starter React frontend scaffold. Several API endpoints are placeholders until the scraper, database, auth, and resume engine are fully wired together.
 
 ## Option 1: Replit
 
@@ -25,10 +25,10 @@ cd tradeg8
 cp backend/.env.example backend/.env
 # Edit backend/.env and add your API keys
 
-# 4. Run backend after the full backend tree is present
+# 4. Run backend
 cd backend && python main.py
 
-# 5. Run frontend in a new terminal after the full frontend tree is present
+# 5. Run frontend in a new terminal
 cd frontend && npm start
 ```
 

@@ -31,7 +31,7 @@ Visit: http://localhost:8000/docs
 
 You should see the FastAPI docs with all endpoints.
 
-Note: this requires the full backend application tree, including `backend/main.py` and the API modules. The current archive added setup scaffolding, but the full backend package tree is not yet present.
+Note: the backend currently exposes starter placeholder endpoints. Install dependencies before running import or server checks.
 
 ## Test Job Scraper
 
@@ -47,4 +47,4 @@ python3 -c "from scraper import JobScraper; s = JobScraper(); jobs = s.scrape_in
 
 You should see the TradeG8 homepage.
 
-Note: this requires the full `backend/` and `frontend/` application trees.
+Note: this starts the scaffold app. Several product features are still placeholders until the backend integrations are connected.

@@ -136,37 +136,37 @@ Built BY construction people FOR construction people.
 
 ---
 
-## 🚀 Features (All 5 Phases Complete)
+## 🚀 Roadmap and Current Status
 
-### ✅ Phase 1: Job Scraper
+### ✅ Phase 1: Job Scraper Scaffold
 - Multi-source scraping (Indeed, Craigslist, LinkedIn)
 - WA L&I contractor verification
 - Glassdoor ratings integration
 - 0-100 scoring algorithm
 - Trainee card hours labeling
 
-### ✅ Phase 2: Resume Translation Engine
+### 🚧 Phase 2: Resume Translation Engine
 - AI-powered construction language translation
 - Trade-specific resume versions
 - Evidence-based bullet points
 - PDF/DOCX export
 - Uses instructor-vetted frameworks
 
-### ✅ Phase 3: User System
+### 🚧 Phase 3: User System
 - Student accounts with authentication
 - Save jobs, track applications
 - Activity logging with timestamps
 - Job alerts (daily/weekly)
 - Data export (own your data)
 
-### ✅ Phase 4: Case Manager Portal
+### 🚧 Phase 4: Case Manager Portal
 - Caseload dashboard
 - Private case notes
 - Outcome tracking
 - Compliance report generation
 - Bulk exports
 
-### ✅ Phase 5: Partnership Dashboard
+### 🚧 Phase 5: Partnership Dashboard
 - Hiring activity tracking
 - Company contact database
 - Outreach campaign tools

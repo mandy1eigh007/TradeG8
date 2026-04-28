@@ -1,18 +1,27 @@
+# Core Framework
 fastapi==0.109.0
 uvicorn[standard]==0.27.0
 python-multipart==0.0.6
+
+# Database
 supabase==2.3.0
-python-jose[cryptography]==3.3.0
-passlib[bcrypt]==1.7.4
-python-dotenv==1.0.0
+psycopg2-binary==2.9.9
+
+# Job Scraping
 playwright==1.41.0
 beautifulsoup4==4.12.3
+requests==2.31.0
+
+# AI & NLP
 transformers==4.37.0
+torch==2.2.0
+
+# Document Generation
 reportlab==4.0.9
 python-docx==1.1.0
+
+# Utilities
+python-dotenv==1.0.0
 pydantic==2.5.3
 pydantic-settings==2.1.0
 email-validator==2.1.0.post1
-httpx==0.24.1
-pandas==2.2.0
-pytest==7.4.4
