@@ -7,6 +7,7 @@ Scrapes job boards, verifies contractors with WA L&I, checks Glassdoor ratings,
 and scores jobs to protect students from wage theft and unsafe work.
 """
 
+import os
 import time
 import csv
 import json
@@ -506,6 +507,35 @@ def main():
     print(f"\n{'='*80}")
     print(f"✅ Results saved to: {csv_filename}")
     print(f"{'='*80}")
+
+    # Push vetted jobs to the TradeG8 job board when the API is available,
+    # so students search one pre-vetted feed instead of re-running scrapes.
+    api_url = os.environ.get("TRADEG8_API_URL", "").rstrip("/")
+    if api_url and all_jobs:
+        try:
+            import urllib.request
+            payload = json.dumps([{
+                'title': j.title, 'company': j.company, 'location': j.location,
+                'pay': j.pay, 'url': j.url, 'source': j.source,
+                'description': j.description,
+                'lni_registered': j.lni_registered, 'lni_status': j.lni_status,
+                'lni_licensed_electrical': j.lni_licensed_electrical,
+                'lni_violations': j.lni_violations,
+                'lni_workers_comp': j.lni_workers_comp,
+                'glassdoor_rating': j.glassdoor_rating,
+                'glassdoor_review_count': j.glassdoor_review_count,
+                'glassdoor_summary': j.glassdoor_summary,
+                'score': j.score, 'score_breakdown': j.score_breakdown,
+                'hours_count_toward_trainee': j.hours_count_toward_trainee,
+                'recommendation': j.recommendation,
+            } for j in all_jobs]).encode()
+            req = urllib.request.Request(
+                f"{api_url}/api/jobs/import", data=payload,
+                headers={"Content-Type": "application/json"}, method="POST")
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                print(f"✅ Imported jobs to TradeG8 job board: {resp.status}")
+        except Exception as e:
+            print(f"⚠ Could not import to job board: {e}")
     
     # Display top 10
     print("\n🏆 TOP 10 VETTED JOBS:\n")

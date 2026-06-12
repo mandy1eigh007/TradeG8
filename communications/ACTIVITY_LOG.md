@@ -133,3 +133,12 @@
 - Added `backend/tests/test_resume_translation.py` (11 tests, all passing) and verified every endpoint end-to-end through the FastAPI test client.
 - Updated `docs/API.md` to document the live resume endpoints.
 - Next planned steps: DOCX/PDF export (resume-maker pattern or docxtpl template), Supabase persistence for resumes, then wiring job search to the scraper.
+
+### Profiles, Vetted Job Board, and One-Tap Application Tracking
+- Mission framing from Mandy: students (some homeless, no phones, shared devices) and navigators have no time for the apply-apply-apply cycle full of fake/data-harvesting postings. Build: profile once → scrubber finds real vetted jobs → one-tap apply → auto-logged.
+- Applied RLS policies to all 8 TradeG8 Supabase tables (students own their data; case managers see their assigned students; authenticated users read vetted jobs/companies). Fixes the security advisor findings.
+- Added `users.profile` JSONB column (apply-once data: target trade, certs, skills, work history, availability, transportation).
+- New backend modules: `database/client.py` (env-configured Supabase client with clear 503 when unconfigured), `api/profiles.py` (upsert/get profile, navigator's student list), `api/applications.py` (one-tap apply/save, tracker with job join, status updates, auto activity logging for compliance), rewritten `api/jobs.py` (DB-backed vetted job board: search by query/location/min-score, import endpoint, job detail).
+- `api/auth.py` now uses real Supabase Auth (signup/login/logout) instead of fake tokens.
+- `scraper.py` now POSTs vetted results to `/api/jobs/import` when `TRADEG8_API_URL` is set.
+- Added `backend/tests/test_api_db.py` with an in-memory Supabase fake covering the full student flow (profile → import → filtered search → apply → tracker → activity log → status update). 15 tests total, all passing.

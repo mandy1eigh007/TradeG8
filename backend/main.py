@@ -7,7 +7,7 @@ Built by Mandy Richardson & Claude (Anthropic)
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api import auth, jobs, resumes
+from api import applications, auth, jobs, profiles, resumes
 
 app = FastAPI(
     title="TradeG8 API",
@@ -42,6 +42,8 @@ async def health():
 app.include_router(jobs.router, prefix="/api/jobs", tags=["Jobs"])
 app.include_router(resumes.router, prefix="/api/resumes", tags=["Resumes"])
 app.include_router(auth.router, prefix="/api/auth", tags=["Auth"])
+app.include_router(profiles.router, prefix="/api/profiles", tags=["Profiles"])
+app.include_router(applications.router, prefix="/api/applications", tags=["Applications"])
 
 
 if __name__ == "__main__":
