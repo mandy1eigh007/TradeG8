@@ -142,3 +142,10 @@
 - `api/auth.py` now uses real Supabase Auth (signup/login/logout) instead of fake tokens.
 - `scraper.py` now POSTs vetted results to `/api/jobs/import` when `TRADEG8_API_URL` is set.
 - Added `backend/tests/test_api_db.py` with an in-memory Supabase fake covering the full student flow (profile → import → filtered search → apply → tracker → activity log → status update). 15 tests total, all passing.
+
+### Platform Hub: Vision Capture + Contractor & Community Pillars
+- Mandy stated the full platform vision: a hub where students/navigators/job-seekers log in with profiles and the scrubber applies for them; contractors get LinkedIn-style "learn about us" pages and list jobs (pitching students instead of being chased); a Reddit-style community organized by trade with channels and mentor-flagged members; ranking/while-you-wait content lives in the community. Goal: be the bridge between pre-apprenticeship and apprenticeship so exploitative middlemen can't be. Recorded as `communications/resume_buildouts/06_PLATFORM_VISION.md`.
+- Database migrations applied to Supabase: contractor page columns on `companies` (about, profile, owner, trades, hiring, lni_verified), direct-posting columns on `jobs` (company_id, posted_by, is_direct_posting), expanded user roles (contractor, mentor), and new community tables (`communities`, `community_channels`, `community_members`, `posts`, `comments`) with RLS policies.
+- Seeded 26 trade communities (one per trade in the objective starters bank), each with 4 default channels: General, Mentorship, Applications & Ranking, Hold-Over Jobs.
+- New endpoints: `api/contractors.py` (browse/upsert pages, contractor page + postings, direct job posting that enters the vetting pipeline at score 0 — no pay-to-skip-vetting) and `api/community.py` (list communities/channels, join as member/mentor/moderator, mentors list, posts, comments).
+- `backend/database/schema.sql` updated to mirror the live schema. 17 tests total, all passing.

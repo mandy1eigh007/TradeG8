@@ -174,3 +174,82 @@ BEGIN
     RAISE NOTICE 'Indexes and triggers applied.';
     RAISE NOTICE 'Ready to use!';
 END $$;
+
+-- ============================================================
+-- Platform hub additions (2026-06-12): contractor pages and
+-- Reddit-style trade communities with mentor-flagged members.
+-- (Applied to Supabase as migrations tradeg8_rls_policies,
+-- tradeg8_users_profile_jsonb, tradeg8_contractors_and_communities,
+-- tradeg8_seed_trade_communities.)
+-- ============================================================
+
+-- Apply-once profile data + expanded roles
+ALTER TABLE users ADD COLUMN IF NOT EXISTS profile JSONB DEFAULT '{}'::jsonb;
+ALTER TABLE users DROP CONSTRAINT IF EXISTS users_role_check;
+ALTER TABLE users ADD CONSTRAINT users_role_check
+  CHECK (role IN ('student', 'case_manager', 'admin', 'contractor', 'mentor'));
+
+-- Contractor "learn about us" pages
+ALTER TABLE companies
+  ADD COLUMN IF NOT EXISTS about TEXT,
+  ADD COLUMN IF NOT EXISTS profile JSONB DEFAULT '{}'::jsonb,
+  ADD COLUMN IF NOT EXISTS owner_id UUID REFERENCES users(id),
+  ADD COLUMN IF NOT EXISTS trades TEXT[] DEFAULT '{}',
+  ADD COLUMN IF NOT EXISTS hiring BOOLEAN DEFAULT false,
+  ADD COLUMN IF NOT EXISTS lni_verified BOOLEAN DEFAULT false;
+
+-- Direct postings by contractors (still vetted + scored)
+ALTER TABLE jobs
+  ADD COLUMN IF NOT EXISTS company_id UUID REFERENCES companies(id),
+  ADD COLUMN IF NOT EXISTS posted_by UUID REFERENCES users(id),
+  ADD COLUMN IF NOT EXISTS is_direct_posting BOOLEAN DEFAULT false;
+
+-- Trade communities (one per trade), channels, members, posts, comments
+CREATE TABLE IF NOT EXISTS communities (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    trade TEXT UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS community_channels (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    community_id UUID REFERENCES communities(id) ON DELETE CASCADE,
+    name TEXT NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT NOW(),
+    UNIQUE(community_id, name)
+);
+
+CREATE TABLE IF NOT EXISTS community_members (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    community_id UUID REFERENCES communities(id) ON DELETE CASCADE,
+    user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+    member_role TEXT NOT NULL DEFAULT 'member'
+        CHECK (member_role IN ('member', 'mentor', 'moderator')),
+    joined_at TIMESTAMP DEFAULT NOW(),
+    UNIQUE(community_id, user_id)
+);
+
+CREATE TABLE IF NOT EXISTS posts (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    channel_id UUID REFERENCES community_channels(id) ON DELETE CASCADE,
+    author_id UUID REFERENCES users(id) ON DELETE SET NULL,
+    title TEXT NOT NULL,
+    body TEXT,
+    pinned BOOLEAN DEFAULT false,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS comments (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    post_id UUID REFERENCES posts(id) ON DELETE CASCADE,
+    author_id UUID REFERENCES users(id) ON DELETE SET NULL,
+    body TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- Default channels seeded per community: General, Mentorship,
+-- Applications & Ranking, Hold-Over Jobs. RLS policies: see migrations.
