@@ -32,3 +32,6 @@ build/
 # Output
 backend/tradeg8_results_*.csv
 tradegate_results_*.csv
+
+# Scratch extraction of source archives in contents/
+contents/_extracted/
