@@ -110,7 +110,7 @@ hand. "I just want to work hard" fails.
 
 ## What this means for TradeG8 features (mapping)
 
-Already built (Jun 2026): role detection, vetted bullet banks, skills canon +
+Already built (Jun 2026): role detection, vetted bullet banks (53 roles — merged from Role_Bullets_Master + the 51-role Job_History_Master), skills canon +
 categorization, cert normalization, union scrubbing, one-page caps, objective
 starters (26 trades × apprenticeship/job), text parsing, job scoring with L&I
 lookup (scraper).

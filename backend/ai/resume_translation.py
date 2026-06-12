@@ -309,6 +309,12 @@ ROLE_ALIASES = {
     "Grounds/Right-of-Way Helper": ["right of way", "row", "grounds"],
     "Warehouse Clerk": ["warehouse clerk", "inventory clerk"],
     "Assembler (Light Manufacturing)": ["assembler", "assembly", "light manufacturing"],
+    "Kitchen Helper": ["kitchen helper", "kitchen staff"],
+    "Busser": ["busser", "bus boy", "busboy", "bussing"],
+    "Host": ["host", "hostess"],
+    "Recycling Sorter": ["recycling", "sorter", "recycler"],
+    "Delivery Helper": ["delivery helper", "delivery assistant"],
+    "General Laborer": ["general laborer", "general labor", "day labor", "day laborer"],
 }
 
 

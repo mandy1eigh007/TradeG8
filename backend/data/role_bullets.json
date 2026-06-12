@@ -4,31 +4,50 @@
       "Prepped, portioned, and labeled 60\u201390 covers/shift; maintained FIFO logs and line temps.",
       "Sanitized stations per checklist; logged times and chemical ratios.",
       "Staged deliveries (50\u2013300 lb) with counts and rotation.",
-      "Communicated tickets; recorded ticket-to-plate timing."
+      "Communicated tickets; recorded ticket-to-plate timing.",
+      "Worked safely around hot equipment; staged pans and utensils; verified temperatures with probe thermometer (\u00b0F)",
+      "Prepped and portioned ingredients to spec using scales; documented counts per station each shift",
+      "Followed production sheets; met ticket times under rush conditions (tracked average minutes/ticket)",
+      "Maintained sanitation: cleaned line, labeled dates, rotated stock (FIFO) and logged temps",
+      "Used knives, slicers, and mixers with cut-resistant gloves and guards; reported defects immediately",
+      "Received deliveries; checked counts by item against invoice; stored per food safety guidelines"
     ],
     "Server": [
       "Managed 8\u201312 table section; tracked orders, comps, and timing.",
       "Closed out drawer within $2 variance; reconciled logs.",
       "Coordinated runners/expo; paced service during peak.",
-      "Upsold specials; recorded sales mix."
+      "Upsold specials; recorded sales mix.",
+      "Handled cash/credit POS; reconciled till with manager sign-off",
+      "Communicated special orders clearly to kitchen; verified items before delivery",
+      "Kept sections clean and hazard free; reported spills and blocked egress immediately",
+      "Resolved customer issues professionally; escalated safety concerns to lead"
     ],
     "Retail Associate": [
       "Stocked 40\u201380 SKUs/shift; verified counts and shelf tags.",
       "Processed returns/exchanges; documented reasons.",
       "Organized backroom and maintained safety aisles (36\").",
-      "Assisted 30\u201360 customers; logged outcomes."
+      "Assisted 30\u201360 customers; logged outcomes.",
+      "Stocked shelves to planogram; front-faced; documented shelf counts",
+      "Assisted customers; used handheld scanners to locate inventory",
+      "Kept aisles clear; followed ladder safety and lifting techniques"
     ],
     "Warehouse Associate": [
       "Picked 80\u2013200 lines/shift; recorded pick rates.",
       "Loaded pallets to pattern; shrink-wrapped and labeled.",
       "Scanned inventory and reconciled variances.",
-      "Operated pallet jack safely; inspection checklist."
+      "Operated pallet jack safely; inspection checklist.",
+      "Picked orders to packing list; verified counts and item codes; staged to dock",
+      "Operated pallet jack/hand truck; followed spotter signals when required",
+      "Maintained housekeeping (5S); recorded near-misses and hazards"
     ],
     "Material Handler": [
       "Moved 1\u20133 tons/day with carts/jacks; maintained egress.",
       "Staged by trade and sequence; counts verified.",
       "Labeled and protected materials; photo logs (no faces).",
-      "Assisted with lift plans; exclusion zone control."
+      "Assisted with lift plans; exclusion zone control.",
+      "Moved materials with pallet jack; secured loads; followed hand signals in shared spaces",
+      "Performed line-side delivery; maintained Kanban levels; recorded shortages",
+      "Conducted visual inspections on containers and packaging"
     ],
     "Traffic Control / Flagger": [
       "Set signs per plan; documented distances and timings.",
@@ -46,79 +65,287 @@
       "Patrolled 4\u20138 zones/shift; logged incidents/time.",
       "Controlled access per list; badges checked.",
       "Monitored cameras; reported anomalies.",
-      "Wrote shift reports; accurate times/locations."
+      "Wrote shift reports; accurate times/locations.",
+      "Monitored entrances; checked IDs; logged visitors with timestamps",
+      "Patrolled per route; documented findings; escalated incidents per protocol",
+      "Completed incident reports; preserved evidence chain where applicable"
     ],
     "Landscaper/Groundskeeper": [
       "Mowed/trimmed 10\u201320k sq ft; equipment checks.",
       "Pruned and removed debris; load counts.",
       "Irrigation checks; recorded run times.",
-      "Safe tool handling; PPE logs."
+      "Safe tool handling; PPE logs.",
+      "Operated mowers/trimmers with PPE; kept guards in place; refueled safely",
+      "Loaded/unloaded equipment; secured on trailer; performed pre-op checks",
+      "Maintained walkways free of debris; marked hazards; followed noise/time rules"
     ],
     "Demolition Laborer": [
       "Removed finishes; tracked debris volume/weight.",
       "Protected egress and adjacent work; checklist.",
       "Operated saws with dust control; logs.",
-      "Sorted recyclables; weight tickets."
+      "Sorted recyclables; weight tickets.",
+      "Set containment per plan; posted signage; used respirator as required",
+      "Sorted debris; documented load counts/weights; maintained clear paths",
+      "Used hand tools/saws; followed lockout/permit rules where applicable"
     ],
     "Carpenter Helper": [
       "Staged lumber/hardware; counts and labels.",
       "Assisted cuts within \u00b11/16\"; blade logs.",
       "Installed blocking/hardware; verified spacing.",
-      "Cleanup and protection per plan."
+      "Cleanup and protection per plan.",
+      "Measured and cut lumber; used saws with guards; verified dimensions to 1/16\u201d",
+      "Held and fastened framing; used levels/squares; recorded materials used",
+      "Maintained clean work area; stored tools safely after shift"
     ],
     "Drywall/Lather Helper": [
       "Staged sheets; recorded counts and sizes.",
       "Assisted hangs; screw pattern checks.",
       "Cut openings to tolerance; waste tracked.",
-      "Cleanup and protection maintained."
+      "Cleanup and protection maintained.",
+      "Carried and staged sheets; measured/cut to size; logged waste counts",
+      "Assisted with hanging/fastening; verified spacing and screw patterns",
+      "Kept walkways clear; collected debris into bins; protected finished surfaces"
     ],
     "Flooring Helper": [
       "Prepped substrate; moisture readings logged.",
       "Staged materials; area and pattern notes.",
       "Assisted cuts and rolls; seam checks.",
-      "Cleanup and VOC notes."
+      "Cleanup and VOC notes.",
+      "Staged materials; cut underlayment; measured and cut pieces to fit",
+      "Maintained clean area; used knee pads and PPE; followed adhesive safety",
+      "Recorded room measurements and material usage"
     ],
     "Concrete Laborer": [
       "Placed/rebar assistance; recorded placements.",
       "Screed/float support; timing logs.",
       "Curing protection installed; covered area.",
-      "Cleanup and jointing checks."
+      "Cleanup and jointing checks.",
+      "Set forms; placed rebar chairs/ties; checked spacing with tape measure",
+      "Placed/compacted concrete; used screed/float; recorded yardage and time",
+      "Cleaned tools; washed out chutes in approved area; kept egress clear"
     ],
     "HVAC Helper": [
       "Staged duct/fittings; counts verified.",
       "Assisted hangers; spacing logs.",
       "Sealed joints; sealant type/feet tracked.",
-      "Labeled airflow and equipment."
+      "Labeled airflow and equipment.",
+      "Staged duct/fittings; measured and cut; crimped/fastened per spec",
+      "Assisted with equipment lifts; used rigging/spotter; protected units",
+      "Recorded filter sizes/changes; logged serial numbers and readings"
     ],
     "Electrical Helper": [
       "Pulled cable; footage and labels recorded.",
       "Bent basic offsets; angle logs.",
       "Terminated devices; torque/checklist notes.",
-      "Panel directory updates."
+      "Panel directory updates.",
+      "Pulled wire; measured/conduit prep; labeled circuits; updated panel schedules",
+      "Used PPE; followed lockout/tagout basics under supervision",
+      "Terminated devices under supervision; torque-verified with lead sign-off"
     ],
     "Plumbing Helper": [
       "Staged pipe/valves; counts/tags.",
       "Measured/cut/deburred; lengths logged.",
       "Hang/support installs; spacing checks.",
-      "Pressure/leak test assistance; records."
+      "Pressure/leak test assistance; records.",
+      "Staged pipe/fittings; measured/cut/thread; applied sealants per spec",
+      "Assisted with rough-in; pressure tests under supervision; logged readings",
+      "Maintained tool inventory; cleaned and organized work area"
     ],
     "Sheet Metal Helper": [
       "Duct install assistance; leak checks logged.",
       "Sealed and taped joints; material usage tracked.",
       "Hanger checks and labels.",
-      "Clean and protect adjacent areas."
+      "Clean and protect adjacent areas.",
+      "Staged sheet; measured and snipped; hemmed/fastened; sealed joints per spec",
+      "Assisted with hangers; verified spacing and level; recorded lengths installed",
+      "Used PPE; protected edges; maintained clean fabrication area"
     ],
     "Ironworker Helper": [
       "Bolt/stage hardware; counts and tags.",
       "Maintain rigging inspections; dates recorded.",
       "Exclusion zones and housekeeping.",
-      "Decking fastener counts."
+      "Decking fastener counts.",
+      "Staged steel; used chokers/shackles; followed hand signals with rigger",
+      "Installed bolts; used spud wrench; aligned holes; verified torque with lead",
+      "Maintained exclusion zone; flagged loose items; tracked bolt counts"
     ],
     "Roofer Helper": [
       "Tear-off and staging; area logged.",
       "Underlayment install; overlaps recorded.",
       "Shingle/fastener pattern checks.",
-      "Cleanup and protection."
+      "Cleanup and protection.",
+      "Staged bundles; set fall protection per plan; inspected anchors/lines",
+      "Cut and placed shingles/membrane; rolled seams; documented squares installed",
+      "Maintained clear ground; controlled debris; protected building openings"
+    ],
+    "Prep Cook": [
+      "Prepared bulk ingredients following recipes; measured by weight/volume and recorded yields",
+      "Set up and broke down stations; verified equipment function via pre-op checklist",
+      "Cleaned, sanitized, and organized workspace; logged tasks in closing checklist",
+      "Sharpened and stored knives per SOP; used guards and PPE to prevent cuts",
+      "Supported line during rush; restocked items keeping par levels"
+    ],
+    "Dishwasher": [
+      "Operated dish machine; monitored rinse temperature and sanitizer concentration; logged results",
+      "Sorted and staged wares safely; avoided overloading racks to prevent breakage",
+      "Disposed of waste and recyclables per SOP; maintained clear walkways",
+      "Performed end-of-shift cleaning: floors, drains, and machine delime"
+    ],
+    "Barista": [
+      "Dialed in grinders; measured dose/yield/shot time; logged adjustments",
+      "Steamed milk to temperature; cleaned wand; used towels per safety/sanitation SOP",
+      "Managed queue during rush; prioritized orders while maintaining quality",
+      "Stocked and rotated perishables; documented waste and pars"
+    ],
+    "Cashier": [
+      "Processed transactions accurately; balanced drawer; documented discrepancies",
+      "Kept front area clear; placed wet floor signage as needed",
+      "Resolved basic issues; called lead for complex returns or safety concerns"
+    ],
+    "Stocker": [
+      "Unloaded pallets with pallet jack; stacked cases to safe height; used rack safety checks",
+      "Cycle-counted SKUs; updated handheld device counts with lead verification",
+      "Broke down boxes; maintained clean aisles and exits"
+    ],
+    "Order Selector": [
+      "Picked by voice/RF; scanned each item; achieved target picks/hour with QC sign-off",
+      "Wrapped pallets; marked loads; communicated with shipping desk for dock assignment",
+      "Tracked errors; participated in corrective coaching sessions"
+    ],
+    "Shipping & Receiving": [
+      "Checked BOLs; verified count/condition; documented over/short/damage with photos",
+      "Labeled inbound; routed to storage; updated system with locator codes",
+      "Coordinated with drivers; used dock safety (chocks, lights, dock plates)"
+    ],
+    "Forklift Operator (trainee/experience)": [
+      "Assisted with pre-shift inspection checklist; reported issues to supervisor",
+      "Shadowed certified operators to learn aisle rules, stacking heights, and speed limits",
+      "Practiced pallet handling in training area under supervision"
+    ],
+    "Delivery Driver (Non-CDL)": [
+      "Performed pre-trip safety checks; documented issues; maintained clean vehicle interior",
+      "Loaded van to route plan; secured cargo; verified addresses",
+      "Followed safe backing protocol; used spotter when available"
+    ],
+    "Mover": [
+      "Packed and wrapped furniture; used dollies/straps; protected floors and doorways",
+      "Lifted/carry items with team; followed safe lifting; staged loads for transport",
+      "Documented item counts and condition; got customer sign-off"
+    ],
+    "Janitor": [
+      "Cleaned restrooms/break areas; mixed chemicals per label; used PPE as required",
+      "Maintained floors (sweep/mop/auto-scrub); placed wet floor signage",
+      "Removed trash; kept egress clear; secured chemicals after use"
+    ],
+    "Custodian": [
+      "Completed task lists on schedule; reported facility hazards promptly",
+      "Stocked supplies; replaced dispensers; logged completed work",
+      "Operated small tools (buffer/vacuum) per SOP; inspected cords and plugs"
+    ],
+    "Housekeeper": [
+      "Cleaned rooms to checklist; sanitized high-touch surfaces; logged room status",
+      "Handled linens safely; used carts without blocking exits",
+      "Reported damage and safety hazards immediately to supervisor"
+    ],
+    "Construction Laborer (general)": [
+      "Carried materials; staged tools; kept site housekeeping (5S); clear egress",
+      "Built/dismantled temporary protections; used PPE and followed signage",
+      "Assisted skilled trades; measured/cut per instruction; documented quantities"
+    ],
+    "Traffic Control/Flagger": [
+      "Set up taper and advance warning per plan; verified spacing and sign order",
+      "Used handheld stop/slow; maintained eye contact with drivers; logged start/stop times",
+      "Inspected devices; replaced damaged cones/signs; noted changes in log"
+    ],
+    "Tool Room Attendant": [
+      "Issued/received tools; scanned barcodes; recorded condition and counts",
+      "Inspected cords/guards; flagged out-of-service items; coordinated repairs",
+      "Organized storage; maintained MSDS/SDS binder accessibility"
+    ],
+    "Parts Counter": [
+      "Looked up part numbers; verified compatibility; processed returns per policy",
+      "Counted inventory; reconciled discrepancies; updated counts in system",
+      "Assisted techs with will-calls; staged orders with labels"
+    ],
+    "Facilities Porter": [
+      "Restocked supplies; maintained lobbies/work areas; cleared trash per route",
+      "Responded to spills; placed signage; escalated hazards to leads",
+      "Logged tasks completed; noted issues for maintenance requests"
+    ],
+    "Event Setup Crew/Stagehand": [
+      "Set up risers, staging, and pipe/drape; verified counts and stability",
+      "Loaded/unloaded gear; used hand trucks and carts; followed spotter signals",
+      "Coiled cables correctly; labeled cases; maintained clear cable paths"
+    ],
+    "Maintenance Helper": [
+      "Assisted with PM tasks; documented readings; handed tools to techs",
+      "Followed LOTO instructions; verified tags before proximity to equipment",
+      "Cleaned and organized shop; tracked parts issued/returned"
+    ],
+    "Painter Helper": [
+      "Prepped surfaces; masked per plan; mixed paint per spec; logged batch/ratio",
+      "Moved ladders/scaffolds safely; inspected tags; observed fall rules",
+      "Maintained clean area; disposed of waste per guidelines"
+    ],
+    "Mason Tender": [
+      "Mixed mortar to ratio; staged block/brick; maintained steady supply",
+      "Built scaffolds to tag; kept planks clean and debris-free",
+      "Tracked counts of block/brick used; reported shortages"
+    ],
+    "Glazier Helper": [
+      "Staged glass units; used cups/gloves; inspected edges; protected surfaces",
+      "Applied sealants; set blocks/shims; checked reveals; recorded sizes",
+      "Maintained clean area; disposed of shards safely"
+    ],
+    "Welder/Fabrication Helper": [
+      "Staged metal; cleaned weld area; measured and marked cuts; used grinder safely",
+      "Held/positioned parts; tack weld under supervision; cooled parts safely",
+      "Logged material heat numbers; organized scrap and offcuts"
+    ],
+    "Grounds/Right-of-Way Helper": [
+      "Cleared brush; staged tools; used chainsaw with PPE per instruction",
+      "Maintained drop zone; used hand signals; watched for public/traffic",
+      "Loaded brush; secured loads; documented disposal site"
+    ],
+    "Warehouse Clerk": [
+      "Logged inbound/outbound; filed BOL/packing slips; updated inventory system",
+      "Performed cycle counts; reconciled discrepancies; escalated issues",
+      "Prepared shipping labels; coordinated pickups with carriers"
+    ],
+    "Assembler (Light Manufacturing)": [
+      "Built subassemblies per work instructions; verified with go/no-go gauges",
+      "Tracked counts and defects; completed traveler with initials/time",
+      "Used small tools and fixtures; maintained 5S station readiness"
+    ],
+    "Kitchen Helper": [
+      "Portioned ingredients; labeled/date-marked; rotated stock FIFO",
+      "Cleaned prep areas; sanitized stations; restocked disposables",
+      "Used cut gloves/guards with knives and slicers"
+    ],
+    "Busser": [
+      "Cleared and sanitized tables; restocked settings; maintained aisle clearance",
+      "Assisted servers during rush; staged plates and silverware to par levels",
+      "Disposed of trash and recycling; kept spill logs and signage"
+    ],
+    "Host": [
+      "Managed waitlist; quoted accurate times; prioritized seating safely",
+      "Coordinated with servers and kitchen; communicated special needs clearly",
+      "Maintained clear entries/exits; reported hazards to manager"
+    ],
+    "Recycling Sorter": [
+      "Sorted materials by category; removed contaminants; followed PPE rules",
+      "Monitored conveyor; cleared jams safely after lockout by authorized staff",
+      "Recorded bale weights and counts; maintained housekeeping"
+    ],
+    "Delivery Helper": [
+      "Assisted driver with loading/unloading; verified item counts; protected property",
+      "Used dollies/straps safely; maintained clear paths; communicated hazards",
+      "Secured cargo; placed items per site instructions; obtained signatures"
+    ],
+    "General Laborer": [
+      "Loaded/unloaded materials; carried to point of use; kept site housekeeping",
+      "Used hand tools safely; followed lead instructions; tracked quantities",
+      "Assisted multiple trades; protected finished work; maintained clear egress"
     ]
   }
 }
