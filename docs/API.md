@@ -103,9 +103,61 @@ Response:
 
 ### Resumes
 
+The resume endpoints are live and run on the rule-based translation engine
+ported from the resume-workshop-app build-out (instructor-vetted content,
+no AI API key required).
+
+#### GET /resumes/trades
+
+List the 26 trades that have instructor-vetted objective starters.
+
+#### GET /resumes/skills
+
+Return the vetted skills canon grouped by category (transferable,
+job-specific, self-management).
+
+#### GET /resumes/objectives
+
+Query parameters:
+
+- `trade` required: target trade, such as `Carpenter (General)`
+- `mode` optional: `apprenticeship` (default) or `job`
+
+Returns instructor-vetted objective starters for the trade, with generic
+fallbacks for unknown trades.
+
+#### GET /resumes/roles
+
+List the 20 prior-work roles that have vetted bullet banks.
+
+#### GET /resumes/role-bullets
+
+Query parameters:
+
+- `role` required: prior role, such as `Line Cook`
+
+Returns measured, evidence-ready duty bullets (≤24 words each) plus the
+construction skills those bullets demonstrate. Returns 404 for unknown roles.
+
+#### POST /resumes/parse
+
+Parse raw resume text into structured suggestions.
+
+Request:
+
+```json
+{ "text": "Jordan Smith\nSeattle, WA\njordan@example.com\n(206) 555-1234\n..." }
+```
+
+Response includes `header` (name/email/phone/city/state), `education`,
+`certifications` (normalized labels, e.g. `OSHA Outreach 10-Hour
+(Construction)`), `detected_roles`, `suggested_bullets` per role, and
+`suggested_skills`.
+
 #### POST /resumes/generate
 
-Generate a construction-language resume.
+Build a construction-ready resume context: union-neutral language, normalized
+skills, ≤24-word bullets, one-page caps (12 skills, 3 jobs, 4 bullets/job).
 
 Request:
 
@@ -114,28 +166,28 @@ Request:
   "name": "John Doe",
   "email": "john@example.com",
   "phone": "206-555-1234",
-  "target_trade": "electrician",
+  "city": "Seattle",
+  "state": "WA",
+  "target_trade": "Electrician – Inside (01)",
+  "objective": "",
+  "skills": ["teamwork", "forklift"],
+  "certifications": ["OSHA 10"],
   "job_history": [
     {
       "title": "Cashier",
       "company": "McDonald's",
-      "duration": "2 years",
-      "responsibilities": [
-        "Handled cash register",
-        "Maintained clean workspace",
-        "Followed safety procedures"
-      ]
+      "city": "Seattle, WA",
+      "dates": "2021 - 2023",
+      "bullets": ["Handled cash register", "Maintained clean workspace"]
     }
+  ],
+  "education": [
+    { "school": "Rainier Beach High School", "credential": "Diploma", "year": "2018" }
   ]
 }
 ```
 
-Response:
-
-```json
-{
-  "resume_id": "resume_123",
-  "pdf_url": "https://storage.url/resume.pdf",
-  "docx_url": "https://storage.url/resume.docx"
-}
-```
+Response: `{ "status": "ok", "resume": { ...cleaned context... } }`. When no
+`objective` is supplied and `target_trade` is set, the response also includes
+`objective_suggestions` from the vetted starters bank. PDF/DOCX export is the
+next planned step.

@@ -111,3 +111,25 @@
 - Updated `backend/requirements.txt` to use `torch==2.2.0`, the first Torch version available for this environment, and aligned backend `transformers` to the root `4.37.0` pin.
 - Reran `pip install -r backend/requirements.txt` successfully after the Torch pin update. This installed `torch==2.2.0+cu121`, `psycopg2-binary`, and the remaining backend-only dependencies.
 - Final verification passed: root backend import returns `TradeG8 API`, backend `health()` returns `{"status": "healthy"}`, and `import torch; print(torch.__version__)` returns `2.2.0+cu121`.
+
+## 2026-06-12
+
+### Build Review
+- Reviewed all build conversations: `communications/Claude-Project_proposal.md`, this activity log, and confirmed no GitHub PRs/issues exist.
+- App review findings: Phase 1 scraper is real but fragile (Indeed selectors, naive L&I keyword parsing); backend API endpoints all responded but were stubs (fake JWT, empty job search, "coming soon" resume generation); frontend is a placeholder page.
+- Verified the live Supabase project (`Tradeg8`) has all 8 schema tables; advisors flag RLS enabled with no policies on TradeG8 tables, plus extra tables from another build (`profiles`, `anew_classes`, etc.) sharing the project.
+- Docs (`BUILD_COMPLETE.md`, README) overstate completeness ("production-ready"); noted for correction.
+
+### Past Build-Out Discovery
+- Pulled resume-related GitHub repos: `mandy1eigh007/resume_workshop` (older Streamlit build) and `mandy1eigh007/resume-workshop-app` (newer build with CONTENT_MASTER.md, Skills_Canon.json, Objective_Starters_Bank.json, Role_Bullets_Master.md, Resume_Context_Schema.json, and rule-based parsing logic).
+- Extracted `contents/Resume -...zip`: instructor workshop docs plus `resume-workshop-app-main.zip` and `reactive-resume-main.zip` (generic TypeScript resume builder — reference only, not integrated).
+- Reviewed Google Drive build-out materials: `TRADEG8_OPTIMIZATION_PLAN.md.docx` (Tier 1 roadmap: application tracking, smart apply, follow-up automation, interview prep), `App_TradeG8.md`, the `resume-maker` skill spec (jsPDF/docx export pattern for future PDF export), and the Resume Project GPT conversation exports.
+- Verified Drive's `TradeG8-COMPLETE-Missing-Files.zip` (May 20) is the same April 28 package already applied; repo versions are newer. Nothing to apply.
+
+### Resume Engine Integration (Phase 2 start)
+- Added `backend/data/` with vetted content from resume-workshop-app: `skills_canon.json`, `objective_starters.json` (26 trades × apprenticeship/job starters), `role_bullets.json` (20 roles, converted from Role_Bullets_Master.md), and `resume_context_schema.json`.
+- Added `backend/ai/resume_translation.py`: rule-based engine ported from resume-workshop-app `app.py` — union-language scrubbing, bullet cleaning (≤24 words), skill normalization/categorization, cert normalization (OSHA/flagger/forklift/etc.), role detection from text, bullet→skill inference, header/education parsing, objective starters with fallback, and one-page resume context assembly.
+- Replaced the `backend/api/resumes.py` stubs with live endpoints: GET `/trades`, `/skills`, `/objectives`, `/roles`, `/role-bullets`; POST `/parse` (raw text → structured suggestions) and `/generate` (structured input → cleaned resume context with objective suggestions).
+- Added `backend/tests/test_resume_translation.py` (11 tests, all passing) and verified every endpoint end-to-end through the FastAPI test client.
+- Updated `docs/API.md` to document the live resume endpoints.
+- Next planned steps: DOCX/PDF export (resume-maker pattern or docxtpl template), Supabase persistence for resumes, then wiring job search to the scraper.
